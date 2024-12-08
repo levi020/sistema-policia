@@ -27,7 +27,7 @@
             switch($_SESSION["cargo"]){
                 case "Policial":
                         echo "<p><a href='addCaso.php'>Adicionar um novo caso</a></p>";
-                        echo "<p><a href='revisaCaso.php'></a></p>";
+                        echo "<p><a href='revisaCaso.php'>Revisar seus casos</a></p>";
                     break;
             }
             echo "</div>";
