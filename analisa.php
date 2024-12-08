@@ -8,7 +8,7 @@ if($conn->connect_error){
     $nameC = hash("sha512",$conn->real_escape_string($_POST["name"]));
     $senhaC = hash("sha512", $conn->real_escape_string($_POST["pass"]));
     $cargoC = hash("sha512",$conn->real_escape_string($_POST["cargo"]));
-
+    
     $sql = "SELECT `name`, `senha`, `cargo` FROM `resgistros` WHERE `name`='".$nameC."' AND `senha`='".$senhaC."' AND `cargo`='".$cargoC."';";
     $query = $conn->query($sql);
     if ($query->num_rows == 1) {
@@ -19,7 +19,10 @@ if($conn->connect_error){
 
         $_SESSION["nome"] = $nome;
         $_SESSION["cargo"] = $cargo;
-        header("location: pagprincipal.php",true, 301);
+        echo "<script>
+            alert('login-bem sucedido');
+            window.location.href = 'pagprincipal.php';
+        </script>";
     }else{
         echo "<script>
         alert('Login Mal-Sucedido');

@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles\styleIndex.css">
 </head>
 <body>
-    <header>
-       <h1>Login</h1>
-    </header>
     <div>
-        <form action="analisa.php" method="post">
-            <label for="name">Informe o seu nome</label>
+        <form action="addOficialSql.php" method="post">
+            <label for="name">Insira o nome do oficial:</label>
+            <br>
             <input type="text" name="name" id="name">
             <br>
-            <label for="pass">Informe sua senha</label>
-            <input type="password" name="pass" id="pass">
+            <label for="senha">Insira a senha do oficial</label>
             <br>
-            <label for="cargo">Informe sua patente</label>
+            <input type="text" name="senha" id="senha">
+            <br>
+            <label for="cargo">Qual o cargo do oficial</label>
+            <br>
             <select name="cargo" id="cargo">
 
             </select>
             <br>
-            <input type="submit" value="Entrar">
+            <input type="submit" value="Enviar">
         </form>
-    </div>
-    <script>
-        var cargos = ["Policial","Detetive","Tenente"];
+        <script>
+        var cargos = ["Policial","Detetive","tenente"];
         const select = document.getElementById("cargo");
 
         for(let i = 0; i < cargos.length;i++){
@@ -36,6 +34,7 @@
             option.textContent = cargos[i];
             select.appendChild(option);
         }
-    </script>
+        </script>
+    </div>
 </body>
 </html>

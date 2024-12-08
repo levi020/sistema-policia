@@ -5,4 +5,3 @@ $pass = "";
 $database = "police";
 
 $conn = new mysqli($hostname,$user,$pass,$database);
-
